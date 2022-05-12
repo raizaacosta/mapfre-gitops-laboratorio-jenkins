@@ -7,5 +7,15 @@ pipeline {
                 echo 'Hello World'
             }
         }
+         stage('Ejemplo'){
+             agent {label 'docker-agent'}
+             steps{
+                 sh"""
+                   hostname
+                   ls -la
+                   pwd
+                 """
+             }
+       )
     }
 }
